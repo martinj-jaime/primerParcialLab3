@@ -3,15 +3,14 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-
         List<Producto> listaProductos = new ArrayList<>();
 
         listaProductos.add(new Escritorio("Escritorio Gamer RGB", 15.22d, 15, 15d, 15d));
-        listaProductos.add(new Silla("Silla Soft", 15.22d, 15, true));
-        listaProductos.add(new Impresora("Impresora de oficina", 15.22d, 15, "Genius", 18));
-        listaProductos.add(new Notebook("Notebook gama media", 15.22d, 15, "Genius", 144d));
-
+        listaProductos.add(new Silla("Silla Soft", 26d, 6, true));
+        listaProductos.add(new Impresora("Impresora de oficina", 95d, 2, "Genius", 18));
+        listaProductos.add(new Notebook("Notebook gama media", 160d, 25, "Noga", 144d));
+        listaProductos.add(new Escritorio("Escritorio mediano", 10d, 8, 80d, 15d));
+        
         /* Inciso 3 */
         System.out.println("Lista de productos: ");
         for (Producto producto : listaProductos) {
@@ -29,7 +28,7 @@ public class Main {
         }
 
         /* Inciso 5 */
-        System.out.println("\n\nProductos antes y despues de aumentos:");
+        System.out.println("\nProductos antes y despues de aumentos:");
         for (Producto producto : listaProductos) {
             System.out.printf("Producto: (%s)\n", producto.getClass().getSimpleName());
             System.out.printf("Precio Antes del aumento: %.2f \n", producto.getPrecio());
@@ -37,9 +36,6 @@ public class Main {
             Producto.aumentarPrecio(producto, aumento);
             System.out.printf("Precio despues del aumento del %.2f prociento: %.2f \n", aumento, producto.getPrecio());
         }
-
-        /* DEBUG */
-        System.out.println("\n COMPILA");
     }
 
     private static Double obtenerAumento(Producto producto) {

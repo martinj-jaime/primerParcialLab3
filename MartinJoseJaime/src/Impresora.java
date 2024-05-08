@@ -6,6 +6,7 @@ public class Impresora extends ProductosInformaticos implements EnOferta {
         this.fabricadasPorMinuto = fabricadasPorMinuto;
     }
 
+    // region Getters & Setters
     public Integer getFabricadasPorMinuto() {
         return fabricadasPorMinuto;
     }
@@ -13,7 +14,7 @@ public class Impresora extends ProductosInformaticos implements EnOferta {
     public void setFabricadasPorMinuto(Integer fabricadasPorMinuto) {
         this.fabricadasPorMinuto = fabricadasPorMinuto;
     }
-
+    // endregion
 
     @Override
     public String toString() {
@@ -22,9 +23,10 @@ public class Impresora extends ProductosInformaticos implements EnOferta {
 
     // region EnOferta Implemenentation
     @Override
-    public Double obtenerPrecioConDescuento(Double descuento) {
-        Double precioConDescuento = super.getPrecio() + super.getPrecio() * descuento;
-        return precioConDescuento;
+    public Double obtenerPrecioConDescuento(Double descuentoPorcentaje) {
+        Double descuento = (super.getPrecio() * descuentoPorcentaje) / 100;
+        Double precioFinal = super.getPrecio() - descuento;
+        return precioFinal;
     }
     // endregion
 }

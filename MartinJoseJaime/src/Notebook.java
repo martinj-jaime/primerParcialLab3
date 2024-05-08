@@ -7,7 +7,7 @@ public class Notebook extends ProductosInformaticos {
         this.capacidadDeMemoriaGb = capacidadDeMemoriaGb;
     }
 
-
+    // region Getters & Setters
     public Double getCapacidadDeMemoriaGb() {
         return capacidadDeMemoriaGb;
     }
@@ -15,6 +15,7 @@ public class Notebook extends ProductosInformaticos {
     public void setCapacidadDeMemoriaGb(Double capacidadDeMemoriaGb) {
         this.capacidadDeMemoriaGb = capacidadDeMemoriaGb;
     }
+    // endregion
 
     @Override
     public String toString() {

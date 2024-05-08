@@ -6,6 +6,7 @@ public class Silla extends Producto implements EnOferta {
         this.traeRuedas = traeRuedas;
     }
 
+    // region Getters & Setters
     public Boolean getTraeRuedas() {
         return traeRuedas;
     }
@@ -13,6 +14,7 @@ public class Silla extends Producto implements EnOferta {
     public void setTraeRuedas(Boolean traeRuedas) {
         this.traeRuedas = traeRuedas;
     }
+    // endregion
 
     @Override
     public String toString() {
@@ -22,9 +24,10 @@ public class Silla extends Producto implements EnOferta {
 
     // region EnOferta Implementation
     @Override
-    public Double obtenerPrecioConDescuento(Double descuento) {
-        Double precioConDescuento = super.getPrecio() + super.getPrecio() * descuento;
-        return precioConDescuento;
+    public Double obtenerPrecioConDescuento(Double descuentoPorcentaje) {
+        Double descuento =  (super.getPrecio() * descuentoPorcentaje) / 100;
+        Double precioFinal = super.getPrecio() - descuento;
+        return precioFinal;
     }
     // endregion
 }

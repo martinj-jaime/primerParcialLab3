@@ -6,6 +6,7 @@ public abstract class ProductosInformaticos extends Producto {
         this.nombreDelFabricante = nombreDelFabricante;
     }
 
+    // region Getters & Setters
     public String getNombreDelFabricante() {
         return nombreDelFabricante;
     }
@@ -13,6 +14,7 @@ public abstract class ProductosInformaticos extends Producto {
     public void setNombreDelFabricante(String nombreDelFabricante) {
         this.nombreDelFabricante = nombreDelFabricante;
     }
+    // endregion
 
     @Override
     public String toString() {
